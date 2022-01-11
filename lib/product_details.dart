@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
 class product_details extends StatefulWidget {
-  String productname,productdesc,productprice;
-   product_details({required this.productname,required this.productdesc,required this.productprice});  
+
+  String productname, productdesc, productimage;
+
+   product_details({required this.productname,required this.productdesc, required this.productimage});
 
   @override
   _product_detailsState createState() => _product_detailsState();
 }
 
 class _product_detailsState extends State<product_details> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,37 +33,33 @@ class _product_detailsState extends State<product_details> {
       ),
       body: Column(
         children: [
-              Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Center(
-              child: CircleAvatar(
-                  backgroundImage: NetworkImage("https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-iconpng-transparent.png"),
-                  radius: 95,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                children: [              
-                     Text("Product Description: ", style: TextStyle(fontWeight: FontWeight.bold)),              
-                     Text(widget.productdesc)
-                ],
-              ),
-            ),
-          ),
-          Padding(
-                      padding: const EdgeInsets.only(left: 27.0),
-                      child: Row(
-                        children: [                        
-                            Text("Product Price: ", style: TextStyle(fontWeight: FontWeight.bold)),                        
-                            Text(widget.productprice),
-                        ],
-                      ),
+          Expanded(
+            child: ListView(
+              children: [
+                          Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Center(
+                    child: Image.network(widget.productimage, height: 350, width: 280)
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 16.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Row(
+                      children: [              
+                    // flexible is for prevent overflowing
+                           Flexible(child: Text("Product Description: ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18))),       
+                           Flexible(child: Text(widget.productdesc, style: TextStyle(fontSize: 15),))
+                      ],
                     ),
-      ],),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      )
     );
   }
 }

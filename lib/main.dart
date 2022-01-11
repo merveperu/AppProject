@@ -1,5 +1,4 @@
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'LOGIN_SCREEN.dart';
@@ -11,20 +10,10 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-    const MyApp({ Key? key }) : super(key: key);
-
-    Future testData() async{
-    FirebaseFirestore db = FirebaseFirestore.instance;
-    var data = await db.collection('product_details').get();
-    var details = data.docs.toList();
-    details.forEach((item) {
-      print(item.id);
-      });          
-  }
+    const MyApp({ Key? key }) : super(key: key); 
 
   @override
-  Widget build(BuildContext context) {
-    testData();
+  Widget build(BuildContext context) {    
     
     return MaterialApp(
         debugShowCheckedModeBanner: false,

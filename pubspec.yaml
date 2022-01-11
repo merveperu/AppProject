@@ -1,4 +1,4 @@
-name: project
+name: term_project
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.16.0-54.0.dev <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -26,15 +26,12 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
-dependencies:  
-  image_picker: ^0.8.4+4
-  share: ^2.0.4
+dependencies:
   flutter:
     sdk: flutter
-  firebase_core: ^1.10.6
-  firebase_auth: ^3.3.4
-  cloud_firestore: ^3.1.5
-  uuid: ^3.0.5
+
+  image_picker: ^0.8.4+4
+  share: ^2.0.4
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -44,6 +41,17 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  firebase_core: ^1.10.6
+  firebase_auth: ^3.3.4
+  cloud_firestore: ^3.1.5
+  uuid: ^3.0.5
+  firebase_storage: ^10.2.4
+  image_picker: ^0.8.4+4
+  share: ^2.0.4
+  file_picker: ^4.3.0
+  rflutter_alert: ^2.0.4
+  thumbnailer: ^2.0.1
+  fluttertoast: ^8.0.8
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

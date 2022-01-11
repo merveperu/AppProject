@@ -1,4 +1,4 @@
-# project
+# term_project
 
 A new Flutter project.
 
